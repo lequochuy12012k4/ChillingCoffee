@@ -1,0 +1,80 @@
+@import "tailwindcss";
+
+@layer utilities {
+  /* Hiệu ứng đổ bóng cho text để dễ đọc hơn trên nền ảnh */
+  .text-shadow {
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+  }
+  .text-shadow-lg {
+    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+  }
+
+  /* Keyframes cho animation */
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Class tiện ích để áp dụng animation */
+  .animate-fade-in-up {
+    animation: fadeInUp 1s ease-out forwards;
+  }
+}
+
+@layer components {
+  /* Tùy chỉnh giao diện cho các nút điều hướng và phân trang của Swiper */
+
+  /* Màu sắc chính cho các thành phần điều hướng */
+  .swiper {
+    --swiper-navigation-color: #ffffff;
+    --swiper-pagination-color: #ffffff;
+    --swiper-navigation-size: 28px; /* Giảm kích thước mũi tên một chút */
+  }
+
+  /* Ẩn các nút điều hướng mặc định */
+  .swiper .swiper-button-prev,
+  .swiper .swiper-button-next {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  /* Khi người dùng di chuột vào slider (nhờ class `group` đã thêm), các nút sẽ hiện ra */
+  .swiper.group:hover .swiper-button-prev,
+  .swiper.group:hover .swiper-button-next {
+    opacity: 1;
+  }
+  
+  /* Tạo nền mờ cho nút để dễ nhìn hơn trên các ảnh khác nhau */
+  .swiper .swiper-button-prev,
+  .swiper .swiper-button-next {
+    background-color: rgba(0, 0, 0, 0.2);
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+  }
+
+  .swiper .swiper-button-prev {
+    left: 20px;
+  }
+
+  .swiper .swiper-button-next {
+    right: 20px;
+  }
+
+  /* Tùy chỉnh dấu chấm phân trang */
+  .swiper-pagination-bullet {
+    width: 10px;
+    height: 10px;
+    background-color: rgba(255, 255, 255, 0.5);
+  }
+
+  .swiper-pagination-bullet-active {
+    background-color: #ffffff;
+  }
+}
