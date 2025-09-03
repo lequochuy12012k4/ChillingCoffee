@@ -85,7 +85,7 @@ const ProductGrid: React.FC = () => {
                 </div>
                 <div className="p-5 text-center">
                   <h3 className="text-xl font-semibold text-gray-800 mb-2">{product.title}</h3>
-                  <p className="text-lg text-[rgba(75,61,35,1)] font-bold">{product.base_price}</p>
+                  <p className="text-lg text-[rgba(75,61,35,1)] font-bold">{product.base_price}đ</p>
                 </div>
               </div>
             </Link>
